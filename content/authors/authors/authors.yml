@@ -1,0 +1,13 @@
+name: Paweł Pukszta
+bio: |
+    Front-end Developer with 10+ years of experience designing, developing, and managing complex internal 
+    frameworks. Specializes in ReactJS, responsive design and newsletter templates. Recently he started his 
+    adventure with the use of Gatsby and Material-UI kit.
+shortBio: |
+    Former front-end developer at GetResponse. Seeker of adventure and new challenges.
+avatar: ./avatars/pawel-pukszta.jpeg
+social:
+    - url: https://twitter.com/pucieq
+    - url: https://github.com/pawelpukszta
+    - url: https://www.linkedin.com/in/pawel-pukszta/
+featured: true
