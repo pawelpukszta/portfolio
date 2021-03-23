@@ -60,8 +60,9 @@ typings/
 .env
 
 # gatsby files
+# PAwel, 20210323: Including public
 .cache/
-public
+#public
 
 # Mac files
 .DS_Store
