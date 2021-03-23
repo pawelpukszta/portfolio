@@ -1,40 +1,34 @@
-- name: Github Action for Gatsby CLI
-  uses: jzweifel/gatsby-cli-github-action@v1.0.0
-
-- name: GitHub Action for Firebase
-  uses: w9jds/firebase-action@v2.0.0
-
 # This is a basic workflow to help you get started with Actions
 name: Build and Deploy
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
-  # Triggers the workflow on push request events and only for the main branch
-  push:
-    branches: [ main ]
+    # Triggers the workflow on push request events and only for the main branch
+    push:
+        branches: [main]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    name: Build and Deploy
+    # This workflow contains a single job called "build"
+    build:
+        name: Build and Deploy
 
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Repo
-      uses: actions/checkout@master
-    - name: Clean Gatsby Site
-      uses: jzweifel/gatsby-cli-github-action@master
-      with:
-        gatsby-arg: clean
-    - name: Build Gatsby Site
-      uses: jzweifel/gatsby-cli-github-action@master
-      with:
-        gatsby-arg: build
-    # Pawel, 20210323: Moved this up from its own Deploy job into this job ()
-    - name: Deploy to Firebase
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@master
+            - name: Clean Gatsby Site
+              uses: jzweifel/gatsby-cli-github-action@master
+              with:
+                  gatsby-arg: clean
+            - name: Build Gatsby Site
+              uses: jzweifel/gatsby-cli-github-action@master
+              with:
+                  gatsby-arg: build
+            # Pawel, 20210323: Moved this up from its own Deploy job into this job ()
+            - name: Deploy to Firebase
+              uses: w9jds/firebase-action@master
+              with:
+                  args: deploy --only hosting
+              env:
+                  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
