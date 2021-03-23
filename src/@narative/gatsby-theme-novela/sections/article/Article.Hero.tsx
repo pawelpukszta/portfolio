@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Headings from '@components/Headings';
-import Image, { ImagePlaceholder } from '@components/Image';
+import Image from '@components/Image';
 
 import mediaqueries from '@styles/media';
 import { IArticle, IAuthor } from '@types';
@@ -33,10 +33,8 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
         </HeroSubtitle>
       </Header>
       <HeroImage id="ArticleImage__Hero">
-        { hasHeroImage ? (
+        { hasHeroImage && (
           <Image src={ article.hero.full } />
-        ) : (
-          <ImagePlaceholder />
         ) }
       </HeroImage>
     </Hero>
@@ -80,8 +78,7 @@ const ArticleMeta = styled.div<{ hasCoAUthors: boolean; }>`
     margin-left: 0;
   `}
 `;
-/* Paweł 20210316: Reduced bottom margin on the Header because it looked too
-  big w/ no hero */
+
 const Header = styled.header`
   position: relative;
   z-index: 10;
@@ -161,8 +158,8 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean; }>`
     }
   `}
 `;
-/* Paweł 20210316: Changed from 'height: 220px' to 'max-width: 100%' for phablet */
-const HeroImage = styled.div`
+
+const HeroImage = styled.div<{ hasHeroImage: boolean; }>`
   position: relative;
   z-index: 1;
   width: 100%;

@@ -128,7 +128,7 @@ const NavigationHeader: React.FC<{}> = () => {
         <NavLinks>
           <NavLinksList>
             <NavLinksListItem>
-              <NavigationLink to="/" style={ { fontWeight: 'bolder', color: fill } }>Home</NavigationLink>
+              <NavigationLink to="/resources" style={ { fontWeight: 'bolder', color: fill } }>Resources</NavigationLink>
             </NavLinksListItem>
             <NavLinksListItem>
               <NavigationLink to="/pawel-pukszta-resume" style={ { fontWeight: 'bolder', color: fill } }>Resume</NavigationLink>
